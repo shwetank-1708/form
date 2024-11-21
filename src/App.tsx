@@ -11,17 +11,16 @@ function App() {
     message: "",
   });
 
-  // Handle input changes for all fields
-  const change = (e) => {
+  const change = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target; // Destructure name and value from event
     setValues((prevValues) => ({
-      ...prevValues, // Copy the previous state
-      [name]: value, // Update the specific field
+      ...prevValues,
+      [name]: value,
     }));
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form Submitted:", values); // Log the entire form data
   };
