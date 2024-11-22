@@ -22,7 +22,27 @@ function App() {
   // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form Submitted:", values); // Log the entire form data
+
+    if (
+      values.name === "" ||
+      values.number === "" ||
+      values.address === "" ||
+      values.state === "" ||
+      values.city === "" ||
+      values.message === ""
+    ) {
+      alert("All fields are required");
+    } else {
+      console.log(values);
+      setValues({
+        name: "",
+        number: "",
+        address: "",
+        state: "",
+        city: "",
+        message: "",
+      });
+    }
   };
 
   return (
