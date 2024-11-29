@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import axios from "axios";
 
 function App() {
   const [values, setValues] = useState({
@@ -20,7 +21,7 @@ function App() {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (
@@ -33,7 +34,11 @@ function App() {
     ) {
       alert("All fields are required");
     } else {
-      console.log(values);
+      await axios
+        .post("http://localhost:1000/api/v1/post", values)
+        .then((res) => {
+          console.log(res);
+        });
       setValues({
         name: "",
         number: "",
