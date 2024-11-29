@@ -47,8 +47,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>Contact Form</h1>
+      <div className="h-[100vh] flex flex-col justify-center items-center bg-blue-200">
+        <h1 className="font-bold text-4xl">Contact Form</h1>
         <form
           onSubmit={handleSubmit}
           className="flex flex-col items-center gap-5 m-5"
@@ -59,6 +59,7 @@ function App() {
             name="name"
             value={values.name}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
           <input
             type="number"
@@ -66,6 +67,7 @@ function App() {
             name="number"
             value={values.number}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
           <input
             type="text"
@@ -73,6 +75,7 @@ function App() {
             name="address"
             value={values.address}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
           <input
             type="text"
@@ -80,6 +83,7 @@ function App() {
             name="state"
             value={values.state}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
           <input
             type="text"
@@ -87,6 +91,7 @@ function App() {
             name="city"
             value={values.city}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
           <input
             type="text"
@@ -94,8 +99,14 @@ function App() {
             name="message"
             value={values.message}
             onChange={change}
+            className="border-2 rounded-md p-1 w-[400px]"
           />
-          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            className="bg-blue-400 px-4 py-2 rounded-lg text-white font-bold"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </>
