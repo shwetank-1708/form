@@ -35,7 +35,7 @@ function App() {
       alert("All fields are required");
     } else {
       await axios
-        .post("https://form-backend-vpna.onrender.com", values)
+        .post("https://form-backend-vpna.onrender.com/api/v1/post", values)
         .then((res) => {
           console.log(res);
         });
